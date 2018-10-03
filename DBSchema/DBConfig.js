@@ -35,7 +35,7 @@ const Routes=new Schema({
 });
 const BusFare=new Schema({
     normalFare: Number,
-    specialFare: Number
+    longFare: Number
 })
 //journey
 // mongoose.model('StartJourney', StartJourney);

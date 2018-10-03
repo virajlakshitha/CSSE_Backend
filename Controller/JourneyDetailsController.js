@@ -6,7 +6,7 @@ var Controller=function () {
     this.insertJourney=function (data) {
         return new Promise(function (resolve,reject) {
             var JourneyDetails=new Schema({
-                userName: data.userName,
+                Username: data.Username,
                 busRoute: data.busRoute,
                 start: data.start,
                 startLat: data.startLat,
