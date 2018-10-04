@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Controller = require('./JourneyDetailsController');
+var Controller = require('./journeyHandlerController');
 
 router.post('/', function (req, res) {
     //if (req.headers.authorization === "admin123") {
