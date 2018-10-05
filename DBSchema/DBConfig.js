@@ -1,16 +1,7 @@
 var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// const StartJourney = new Schema({
-//     name: String,
-//     latitude: Number,
-//     longtitude: Number
-// });
-// const EndJourney = new Schema({
-//     name: String,
-//     latitude: Number,
-//     longtitude: Number
-// });
+//Store tour details
 const JourneyDetails=new Schema({
     Username: String,
     busRoute: String,
@@ -20,9 +11,10 @@ const JourneyDetails=new Schema({
     end: String,
     endLat: Number,
     endLong: Number,
-    amount: Number,
+    fare: Number,
     date: Date
 })
+//Route details
 const Routes=new Schema({
     route: String,
     start: String,
@@ -33,6 +25,7 @@ const Routes=new Schema({
     },
     end: String
 });
+//Bus fare details
 const BusFare=new Schema({
     normalFare: Number,
     longFare: Number

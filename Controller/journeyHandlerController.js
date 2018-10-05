@@ -2,7 +2,9 @@ var mongoose=require('../DBSchema/DBConfig');
 var Schema = mongoose.model('JourneyDetails');
 var Schema1 = mongoose.model('Routes');
 
+//Controller function
 var Controller=function () {
+    //To insert tour details
     this.insertJourney=function (data) {
         return new Promise(function (resolve,reject) {
             var JourneyDetails=new Schema({
@@ -24,6 +26,7 @@ var Controller=function () {
             })
         });
     }
+    //To get all tour details
     this.getAll=function () {
         return new Promise(function (resolve,reject) {
             Schema.find().exec().then(function (data) {
@@ -33,6 +36,7 @@ var Controller=function () {
             })
         })
     }
+    //To get a particular route
     this.getRoute=function (route) {
         return new Promise(function (resolve,reject) {
             Schema1.find({route:route}).exec().then(function (data) {
