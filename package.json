@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "backend",
-=======
   "name": "cssebackend",
->>>>>>> journey-history-feature
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,8 +8,7 @@
     "start": "node index.js"
   },
   "author": "",
-<<<<<<< HEAD
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
@@ -27,12 +22,5 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "request": "^2.88.0"
-=======
-  "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.4",
-    "express": "^4.16.3"
->>>>>>> journey-history-feature
   }
 }
