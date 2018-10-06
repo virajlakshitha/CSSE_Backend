@@ -12,9 +12,9 @@ router.get('/', function (req, res) {
         })
 });
 //To get the total amount
-router.get('/tot/:route/:busType', function (req, res) {
+router.get('/tot/:route/:fare/:noHalt/:lat/:long', function (req, res) {
     
-        Controller.getTotAmount(req.params.route,req.params.busType).then(function (data) {
+        Controller.getTotAmount(req.params.route,req.params.fare,req.params.noHalt,req.params.lat,req.params.long).then(function (data) {
             res.status(data.status).send({ data: data.data });
         }).catch(function (err) {
             res.status(err.status).send({ message: message });

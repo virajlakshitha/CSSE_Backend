@@ -16,8 +16,9 @@ var Controller=function () {
                 end: data.end,
                 endLat: data.endLat,
                 endLong: data.endLong,
-                date: data.date,
-                fare: data.fare                
+                fare: data.fare,
+                date: Date
+                                
             });
             JourneyDetails.save().then(function () {
                 resolve({status:200,message:"Journey Details Added Successfully !"});

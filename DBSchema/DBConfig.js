@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+// var moment = require('moment');
 const Schema = mongoose.Schema;
 
 //Store tour details
@@ -12,6 +13,7 @@ const JourneyDetails=new Schema({
     endLat: Number,
     endLong: Number,
     fare: Number,
+    // date: moment().format('MMMM Do YYYY, h:mm:ss a')
     date: Date
 })
 //Route details
@@ -31,8 +33,6 @@ const BusFare=new Schema({
     longFare: Number
 })
 //journey
-// mongoose.model('StartJourney', StartJourney);
-// mongoose.model('EndJourney', EndJourney);
 mongoose.model('JourneyDetails', JourneyDetails);
 mongoose.model('Routes', Routes);
 mongoose.model('BusFare',BusFare);
