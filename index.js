@@ -1,21 +1,15 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var logger = require('morgan');
-var methodOverride = require('method-override')
+const express=require('express');
+const cors=require('cors');
 
-var cors = require('cors');
+const app=express();
+const BodyParser=require('body-parser');
 const Routes=require('./Routes');
-var app = express();
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(methodOverride());
 
-app.use(bodyParser.json());
+app.use(BodyParser.json());
 app.use(cors());
 app.use('/',Routes);
 
- 
-app.listen(3001,'0.0.0.0',function(err) {
+app.listen(3001,'localhost',function(err) {
     if(err){
         console.log(err);
         process.exit(-1);

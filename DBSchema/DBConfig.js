@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//Store tour details
 const CustomerSchema = new Schema({
     First_Name: String,
     Last_Name: String,
@@ -17,50 +16,14 @@ const CustomerSchema = new Schema({
     Address: String,
     Mobile: String
 });
-//viraj's
-const JourneyDetails = new Schema({
-    Username: String,
-    busRoute: String,
-    start: String,
-    startLat: Number,
-    startLong: Number,
-    end: String,
-    endLat: Number,
-    endLong: Number,
-    fare: Number,
-    date: Date
-})
-//Route details
-const Routes=new Schema({
-    route: String,
-    start: String,
-    haults: {
-        busHault: String,
-        latitude: Number,
-        longtitude: Number
-    },
-    end: String
-});
-//Bus fare details
-const BusFare=new Schema({
-    normalFare: Number,
-    longFare: Number
-})
-//journey
-// mongoose.model('StartJourney', StartJourney);
-// mongoose.model('EndJourney', EndJourney);
-mongoose.model('JourneyDetails', JourneyDetails);
-mongoose.model('Routes', Routes);
-mongoose.model('BusFare',BusFare);
 
-mongoose.model('JourneyDetails', JourneyDetails);
 mongoose.model('Customer', CustomerSchema);
 
-mongoose.connect('mongodb://127.0.0.1:27017/CSSE_DB', { useNewUrlParser: true }, function (err) {
+mongoose.connect('mongodb://127.0.0.1:27017/CSSE_DB', function (err) {
     if (err) {
         console.log(err);
         process.exit(-1);
     }
-    console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB....');
 });
 module.exports = mongoose;
