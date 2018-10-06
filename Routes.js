@@ -7,5 +7,11 @@ var FareAlgorithmRoute=require('./Controller/FareAlgorithm.Route');
 // Routes.use('/routes/',StartJourneyRoute);
 Routes.use('/journey/',JourneyRoute);
 Routes.use('/total/',FareAlgorithmRoute);
+// Routes.use('/total/',CalculateTotalRoute);
+var User = require('./Controller/UserRoute');
+var View = require('./Controller/ViewJourneysRoutes');
+
+Routes.use('/user/',User);
+Routes.use('/journeyhistory/',View);
 
 module.exports = Routes;
