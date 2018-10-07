@@ -31,16 +31,25 @@ const JourneyDetails = new Schema({
     // date: moment().format('MMMM Do YYYY, h:mm:ss a')
     date: Date
 })
+// const BusTypeFare=new Schema({
+//     fareType: String,
+//     fareBasic: Number,
+//     fareAdditional:Number
+// })
 //Route details
 const Routes=new Schema({
     route: String,
     start: String,
+    startLat: Number,
+    startLong: Number,
     haults: {
         busHault: String,
         latitude: Number,
         longtitude: Number
     },
-    end: String
+    end: String,
+    endLat: Number,
+    endLong: Number
 });
 //Bus fare details
 const BusFare=new Schema({
@@ -51,10 +60,11 @@ const BusFare=new Schema({
 mongoose.model('JourneyDetails', JourneyDetails);
 mongoose.model('Routes', Routes);
 mongoose.model('BusFare',BusFare);
+// mongoose.model('BusTypeFare',BusTypeFare);
 
 mongoose.model('Customer', CustomerSchema);
 
-mongoose.connect('mongodb://127.0.0.1:27017/CSSE_DB', { useNewUrlParser: true }, function (err) {
+mongoose.connect('mongodb://127.0.0.1:27017/csse', { useNewUrlParser: true }, function (err) {
     if (err) {
         console.log(err);
         process.exit(-1);
