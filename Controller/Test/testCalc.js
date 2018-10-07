@@ -1,5 +1,6 @@
 var expect  = require('chai').expect;
 var request = require('request');
+var algorithm= require('../FareAlgorithm');
 
 it('Node JS Connect', function(done) {
     request('http://localhost:3001' , function(error, response, body) {
