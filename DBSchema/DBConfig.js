@@ -54,7 +54,7 @@ mongoose.model('BusFare',BusFare);
 
 mongoose.model('Customer', CustomerSchema);
 
-mongoose.connect('mongodb://127.0.0.1:27017/CSSE_DB', function (err) {
+mongoose.connect('mongodb://127.0.0.1:27017/CSSE_DB', { useNewUrlParser: true }, function (err) {
     if (err) {
         console.log(err);
         process.exit(-1);
