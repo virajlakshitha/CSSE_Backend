@@ -1,4 +1,4 @@
-var mongoose=require('../DBSchema/ProfileDB');
+var mongoose=require('../DBSchema/DBConfig');
 var PaymentSchema = mongoose.model('payment');
 
 var Controller=function () {
