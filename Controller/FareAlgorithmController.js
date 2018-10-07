@@ -20,6 +20,7 @@ var FareAlgorithmController=function () {
         return new Promise(function (resolve,reject) {
             Schema.find({route:route}).exec().then(function (data) {
                 resolve({status:200,data: fareAlgorithm.journeyTotal(data[0],fare,number,lat,long)});
+                console.log(data);
             }).catch(function (err) {
                 reject({status:404,message:"No data available"});
             })

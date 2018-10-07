@@ -37,7 +37,7 @@ const JourneyDetails = new Schema({
 //     fareAdditional:Number
 // })
 //Route details
-const Routes=new Schema({
+const Routes = new Schema({
     route: String,
     start: String,
     startLat: Number,
@@ -52,49 +52,61 @@ const Routes=new Schema({
     endLong: Number
 });
 //Bus fare details
-const BusFare=new Schema({
+const BusFare = new Schema({
     normalFare: Number,
     longFare: Number
 })
 
-const paymentSchema=new Schema({
-    Username:{
+//RouteManagement
+const RouteManagerSchema = new Schema({
+    NIC: String,
+    First_Name: String,
+    Last_Name: String,
+    Username: String,
+    Password: String,
+    Email_Address: String,
+    Address: String,
+    Mobile: Number
+});
+
+const paymentSchema = new Schema({
+    Username: {
         type: String,
-        require:true
-    },
-    busRoute: {
-        type:String,
         require: true
     },
-    start:{
-        type:String,
-        require:true
+    busRoute: {
+        type: String,
+        require: true
     },
-    end:{
-        type:String,
-        require:true
+    start: {
+        type: String,
+        require: true
     },
-    date:{
-        type:Number,
-        require:true
+    end: {
+        type: String,
+        require: true
     },
-    amount:{
-        type:Number,
-        require:true
+    date: {
+        type: Number,
+        require: true
+    },
+    amount: {
+        type: Number,
+        require: true
     }
 
 });
 
-mongoose.model('payment',paymentSchema);
-
+mongoose.model('payment', paymentSchema);
+mongoose.model('RouteManagerSchema',RouteManagerSchema);
 mongoose.model('JourneyDetails', JourneyDetails);
 mongoose.model('Routes', Routes);
-mongoose.model('BusFare',BusFare);
+mongoose.model('BusFare', BusFare);
 // mongoose.model('BusTypeFare',BusTypeFare);
 
 mongoose.model('Customer', CustomerSchema);
 
-mongoose.connect('mongodb://127.0.0.1:27017/csse', { useNewUrlParser: true }, function (err) {
+mongoose.connect('mongodb://127.0.0.1:27017/CSSE_DB', { useNewUrlParser: true }, function (err) {
     if (err) {
         console.log(err);
         process.exit(-1);

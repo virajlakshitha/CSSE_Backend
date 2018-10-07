@@ -21,7 +21,6 @@ class FareAlgorithm{
                 for(j=i;j<blength-1;j++){
                     count++;
                 }
-                break;
             }
         }
         if(number-count>3){
