@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 // var moment = require('moment');
 const Schema = mongoose.Schema;
 
-//Store tour details
 const CustomerSchema = new Schema({
     First_Name: String,
     Last_Name: String,
@@ -53,14 +52,13 @@ mongoose.model('JourneyDetails', JourneyDetails);
 mongoose.model('Routes', Routes);
 mongoose.model('BusFare',BusFare);
 
-mongoose.model('JourneyDetails', JourneyDetails);
 mongoose.model('Customer', CustomerSchema);
 
-mongoose.connect('mongodb://127.0.0.1:27017/CSSE_DB', { useNewUrlParser: true }, function (err) {
+mongoose.connect('mongodb://127.0.0.1:27017/CSSE_DB', function (err) {
     if (err) {
         console.log(err);
         process.exit(-1);
     }
-    console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB....');
 });
 module.exports = mongoose;

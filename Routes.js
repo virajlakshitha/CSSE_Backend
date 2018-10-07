@@ -11,7 +11,10 @@ Routes.use('/total/',FareAlgorithmRoute);
 var User = require('./Controller/UserRoute');
 var View = require('./Controller/ViewJourneysRoutes');
 
-Routes.use('/user/',User);
-Routes.use('/journeyhistory/',View);
+var CustRoute=require('./Controller/Cust.Route');
+
+
+Routes.use('/customer/',CustRoute);
+
 
 module.exports = Routes;
