@@ -10,7 +10,7 @@ var Controller = function () {
                 NIC_Passport_No: data.NIC_Passport_No,
                 DateOfBirth: data.DateOfBirth,
                 citizenship: data.citizenship,
-                Deposit_Amount: data.Deposit_Amount,
+                Deposit_Amount: 100,
                 Username: data.Username,
                 Password: data.Password,
                 Security_Question: data.Security_Question,
