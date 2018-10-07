@@ -47,7 +47,37 @@ const BusFare=new Schema({
     normalFare: Number,
     longFare: Number
 })
-//journey
+
+const paymentSchema=new Schema({
+    Username:{
+        type: String,
+        require:true
+    },
+    busRoute: {
+        type:String,
+        require: true
+    },
+    start:{
+        type:String,
+        require:true
+    },
+    end:{
+        type:String,
+        require:true
+    },
+    date:{
+        type:Number,
+        require:true
+    },
+    amount:{
+        type:Number,
+        require:true
+    }
+
+});
+
+mongoose.model('payment',paymentSchema);
+
 mongoose.model('JourneyDetails', JourneyDetails);
 mongoose.model('Routes', Routes);
 mongoose.model('BusFare',BusFare);
