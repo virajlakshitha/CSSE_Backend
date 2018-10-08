@@ -9,7 +9,7 @@ app.use(BodyParser.json());
 app.use(cors());
 app.use('/',Routes);
 
-app.listen(5003,'localhost',function(err) {
+app.listen(5003,'0.0.0.0',function(err) {
     if(err){
         console.log(err);
         process.exit(-1);
