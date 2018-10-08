@@ -9,18 +9,32 @@ chai.use(chaiHttp)
 
 describe('Site', () => {
     let server = 'localhost';
-    let pay = {
-        Username: "batman",
-        busRoute: 177,
+    let user = {
+        
+
+        route: "177 kaduwela-kollupitiya",
         start: "kaduwela",
-        end: "kollupitiya",
-        fare: "Sri Lankan",
-        date: 100,
+        startLat: 69.2281,
+        startLong: 72.0281,
+        haults: [{
+            busHault: "Kaduwela",
+            latitude: 69.2281,
+            longtitude: 72.0281
+        },
+        {
+            busHault: "Kollupitiya",
+            latitude: 70.2281,
+            longtitude: 72.5277
+        }
+    ],
+        end: "Kollupitiya",
+        endLat: 70.2281,
+        endLong: 72.5277
     }
 
 
     it('GET', done => {
-        chai.request(server).get('/payment')
+        chai.request(server).get('/route')
             .end((error, res) => {
                 res.should.have.status(204)
                 done()
@@ -28,7 +42,7 @@ describe('Site', () => {
     })
 
     it('POST', done => {
-        chai.request(server).post('/payment/')
+        chai.request(server).post('/route/')
             .set('content-type', 'application/json')
             .send(user)
             .end((error, res) => {
@@ -39,8 +53,8 @@ describe('Site', () => {
     })
 
     it('POST', done => {
-    pay.Username = undefined
-        chai.request(server).post('/payment')
+        user.Username = undefined
+        chai.request(server).post('/route')
             .set('content-type', 'application/json')
             .send()
             .end((error, res) => {
@@ -51,7 +65,7 @@ describe('Site', () => {
     })
 
     it('GET', done => {
-        chai.request(server).get('/payment')
+        chai.request(server).get('/route')
             .end((error, res) => {
                 res.should.have.status(200)
                 res.body.should.have.be.a('array')

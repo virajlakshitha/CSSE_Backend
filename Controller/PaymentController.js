@@ -8,9 +8,8 @@ var Controller=function () {
                 Username: data.Username,
                 busRoute : data.busRoute,
                 start:data.start,
-                end:date.end,
-                fare:date.fare,
-                date:date.date
+                end:data.end,
+                amount:data.amount
             });
             payment.save().then(function () {
                 resolve({status:200,message:" successfully !"});

@@ -9,7 +9,7 @@ chai.use(chaiHttp)
 
 describe('Site', () => {
     let server = 'localhost';
-    let user = {
+    let customer = {
         First_Name: "Dhanushi",
         Last_Name: "Umayangani",
         NIC_Passport_No: "982033314v",
@@ -46,7 +46,7 @@ describe('Site', () => {
     })
 
     it('POST', done => {
-        user.Username = undefined
+        customer.Username = undefined
         chai.request(server).post('/customer')
             .set('content-type', 'application/json')
             .send()

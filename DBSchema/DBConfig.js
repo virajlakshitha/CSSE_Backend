@@ -86,10 +86,6 @@ const paymentSchema = new Schema({
         type: String,
         require: true
     },
-    date: {
-        type: Number,
-        require: true
-    },
     amount: {
         type: Number,
         require: true
